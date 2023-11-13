@@ -1,0 +1,14 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - echo "your_password"
+    - chmod 700 /path/to/askpass.sh
+    - sudo SUDO_ASKPASS=/path/to/askpass.sh apk update
+    - sudo apk update
+    - apk add openssh-client sshpass
+    - sshpass -p 'poiuytr' scp -r * test@192.168.14.161:/path/to/destination/folder
+    - sshpass -p 'poiuytr' ssh test@192.168.14.161 "cd /path/to/destination/folder && docker build -t aaa ."
+ 
