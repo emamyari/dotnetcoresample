@@ -8,8 +8,8 @@ pipeline {
                     def dockerImageName = 'saeed:latest'
 
                     sh "docker build -t $dockerImageName ."
-
-               
+  
+                 
                 }
             }
         }
