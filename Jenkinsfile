@@ -9,7 +9,7 @@ pipeline {
 
                     sh "docker build -t $dockerImageName ."
   
-                 
+                   
                 }
             }
         }
